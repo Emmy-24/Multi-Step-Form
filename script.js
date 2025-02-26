@@ -2,7 +2,9 @@ function gotosteptwo() {
   checkName();
   checkNumber();
   checkEmail();
-  Achieve();
+  if (Achieve()) {
+
+  };
 }
 
 function gobacktostepone() {
@@ -23,6 +25,12 @@ function gotostepthree() {
     console.log(document.getElementById("totalPrice").innerHTML);
   }
   checkPlan();
+  stepPlan.style.display = "none";
+  stepAddon.style.display = "flex";
+  circle2.style.color = "white";
+  circle2.style.backgroundColor = "rgba(255, 255, 255, 0)";
+  circle3.style.backgroundColor = "rgb(255, 255, 255)";
+  circle3.style.color = "black";
 }
 function gobacktosteptwo() {
   stepPlan.style.display = "flex";
@@ -33,13 +41,14 @@ function gobacktosteptwo() {
   circle3.style.color = "white";
 }
 
-function gotostepfour() {
+function gotostepthree() {
   stepSummary.style.display = "flex";
   stepAddOn.style.display = "none";
   circle3.style.color = "white";
   circle3.style.backgroundColor = "rgba(255, 255, 255, 0)";
   circle4.style.backgroundColor = "rgb(255, 255, 255)";
   circle4.style.color = "black";
+  
 
   const addonPrice = document.getElementsByName("addon").forEach(radio => {
     if (radio.checked) {
@@ -93,8 +102,8 @@ function gofromfourtotwo() {
   });
 }
 function gotostepthankyou() {
-  console.log(document.getElementById("modeResume").innerHTML);
-  if (document.getElementById("modeResume").innerHTML == "Choose a plan") {
+  console.log(document.getElementById("modesummary").innerHTML);
+  if (document.getElementById("modesummary").innerHTML == "Choose a plan") {
     stepSummary.style.display = "flex";
     stepThankYou.style.display = "none";
   } else {
@@ -102,9 +111,28 @@ function gotostepthankyou() {
     stepThankYou.style.display = "flex";
   }
 }
+/* Function to toggle between Monthly and Yearly Plan */
+function togglePlan() {
+    const switchcheckbox = document.getElementById("switch");
+    const planMonth = document.getElementById("planMonth");
+    const planYear = document.getElementById("planYear");
+    const addonMonthly = document.getElementById("addonMonthly");
+    const addonYearly = document.getElementById("addonYearly");
+
+    if (switchcheckbox.checked) {
+        planMonth.style.display = "none";
+        planYear.style.display = "flex";
+        addonMonthly.style.display = "none";
+        addonYearly.style.display = "flex";
+    } else {
+        planMonth.style.display = "flex";
+        planYear.style.display = "none";
+        addonMonthly.style.display = "flex";
+        addonYearly.style.display = "none";
+    }
+}
 
 /*Function to check if the checkbox is checked to display plan < year. */
-
 checkBox = document
   .getElementById("switch")
   .addEventListener("click", event => {
@@ -140,8 +168,8 @@ checkBox = document
     anPro.style.backgroundColor = "white";
     anPro.style.border = " solid 1px hsl(229, 24%, 87%)";
     /* The next part */
-    document.getElementById("modeResume").innerHTML = "Arcade (monthly)";
-    document.getElementById("priceResume").innerHTML = "9$/mo";
+    document.getElementById("modesummary").innerHTML = "Arcade (monthly)";
+    document.getElementById("pricesummary").innerHTML = "9$/mo";
     document.getElementById("modeTotal").innerHTML = "Total (per month)";
   });
 checkBox = document
@@ -161,8 +189,8 @@ checkBox = document
     anPro.style.backgroundColor = "white";
     anPro.style.border = " solid 1px hsl(229, 24%, 87%)";
     /* The next part */
-    document.getElementById("modeResume").innerHTML = "Advenced (monthly)";
-    document.getElementById("priceResume").innerHTML = "12$/mo";
+    document.getElementById("modesummary").innerHTML = "Advenced (monthly)";
+    document.getElementById("pricesummary").innerHTML = "12$/mo";
     document.getElementById("modeTotal").innerHTML = "Total (per month)";
   });
 checkBox = document
@@ -182,8 +210,8 @@ checkBox = document
     anPro.style.backgroundColor = "white";
     anPro.style.border = " solid 1px hsl(229, 24%, 87%)";
     /* The next part */
-    document.getElementById("modeResume").innerHTML = "Pro (monthly)";
-    document.getElementById("priceResume").innerHTML = "15$/mo";
+    document.getElementById("modesummary").innerHTML = "Pro (monthly)";
+    document.getElementById("pricesummary").innerHTML = "15$/mo";
     document.getElementById("modeTotal").innerHTML = "Total (per month)";
   });
 checkBox = document
@@ -203,8 +231,8 @@ checkBox = document
     anPro.style.backgroundColor = "white";
     anPro.style.border = " solid 1px hsl(229, 24%, 87%)";
     /* The next part */
-    document.getElementById("modeResume").innerHTML = "Arcade (yearly)";
-    document.getElementById("priceResume").innerHTML = "90$/yr";
+    document.getElementById("modesummary").innerHTML = "Arcade (yearly)";
+    document.getElementById("pricesummary").innerHTML = "90$/yr";
     document.getElementById("modeTotal").innerHTML = "Total (per year)";
   });
 checkBox = document
@@ -224,8 +252,8 @@ checkBox = document
     anPro.style.backgroundColor = "white";
     anPro.style.border = " solid 1px hsl(229, 24%, 87%)";
     /* The next part */
-    document.getElementById("modeResume").innerHTML = "Advanced (yearly)";
-    document.getElementById("priceResume").innerHTML = "12O$/yr";
+    document.getElementById("modesummary").innerHTML = "Advanced (yearly)";
+    document.getElementById("pricesummary").innerHTML = "12O$/yr";
     document.getElementById("modeTotal").innerHTML = "Total (per year)";
   });
 checkBox = document
@@ -245,8 +273,8 @@ checkBox = document
     anAdvenced.style.backgroundColor = "white";
     anAdvenced.style.border = " solid 1px hsl(229, 24%, 87%)";
     /* The next part */
-    document.getElementById("modeResume").innerHTML = "Pro (yearly)";
-    document.getElementById("priceResume").innerHTML = "150$/yr";
+    document.getElementById("modesummary").innerHTML = "Pro (yearly)";
+    document.getElementById("pricesummary").innerHTML = "150$/yr";
     document.getElementById("modeTotal").innerHTML = "Total (per year)";
   });
 
@@ -312,7 +340,7 @@ checkBox = document
       document.getElementById("customizablePrice").innerHTML = "+0$";
     }
   });
-function reset() {
+function togglePlan() {
   document.getElementById("onlineMois").checked = false;
   document.getElementById("storageMois").checked = false;
   document.getElementById("customizableMois").checked = false;
@@ -325,8 +353,8 @@ function reset() {
   document.getElementById("onlinePrice").innerHTML = "+0$";
   document.getElementById("storagePrice").innerHTML = "+0$";
   document.getElementById("customizablePrice").innerHTML = "+0$";
-  document.getElementById("modeResume").innerHTML = "Choose a plan";
-  document.getElementById("priceResume").innerHTML = "0$";
+  document.getElementById("modesummary").innerHTML = "Choose a plan";
+  document.getElementById("pricesummary").innerHTML = "0$";
   moisArcade.style.backgroundColor = "white";
   moisArcade.style.border = " solid 1px hsl(229, 24%, 87%)";
   moisPro.style.backgroundColor = "white";
@@ -446,10 +474,13 @@ function Achieve() {
     circle1.style.backgroundColor = "rgba(255, 255, 255, 0)";
     circle2.style.backgroundColor = "rgb(255, 255, 255)";
     circle2.style.color = "black";
+    return true;
+  } else {
+    return false;
   }
 }
 function checkPlan() {
-  if (document.getElementById("modeResume").innerHTML == "Choose a plan") {
+  if (document.getElementById("modesummary").innerHTML == "Choose a plan") {
     stepInfo.style.display = "none";
     stepPlan.style.display = "flex";
     circle1.style.color = "white";

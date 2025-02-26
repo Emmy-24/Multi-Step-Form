@@ -80,13 +80,13 @@
                                    <span class="priceMonth" id="priceMonth">$9/mo</span>
                               </button>
           
-                              <button class="planbutton" id="moisAdvanced" onclick="getPrice1()">
+                              <button class="planbutton" id="moisAdvanced" onclick="getPrice2()">
                                    <img src="/images/icon-advanced.svg" alt="">
                                    <p>Advanced</p>
                                    <span class="priceMonth" id="priceMonth">$12/mo</span>
                               </button>
           
-                              <button class="planbutton" id="moisPro" onclick="getPrice1()">
+                              <button class="planbutton" id="moisPro" onclick="getPrice3()">
                                    <img src="/images/icon-pro.svg" alt="">
                                    <p>Pro</p>
                                    <span class="priceMonth" id="priceMonth">$15/mo</span>
@@ -119,8 +119,8 @@
                          <div class="switch">
                               <p class="monthly">Monthly</p>
                               <label for="" class="check">
-                                   <input type="checkbox" name="" id="switch" id="checkbox" onclick="reset()">
-                                   <span></span>
+                                   <input type="checkbox" name="" id="switch" id="checkbox" onclick="togglePlan()">
+                                   <span class="slider"></span>
                               </label>
                               <p class="yearly">Yearly</p>
                          </div>
@@ -217,28 +217,28 @@
                     <div class="stepSummary" id="stepSummary">
                          <h1>Finishing up</h1>
                          <p class="description">Double-check everything looks OK before confirming.</p>
-                         <div class="resume">
-                              <div class="containerResume">
-                                   <div id="resumeMonth">
-                                        <div class="flexResume">
+                         <div class="summary">
+                              <div class="containersummary">
+                                   <div id="summaryMonth">
+                                        <div class="flexsummary">
                                              <div>
-                                                  <h4 id="modeResume">Choose a Plan</h4>
+                                                  <h4 id="modesummary">Choose a Plan</h4>
                                                   <button onclick="gofromfourtotwo()">Change</button>
                                              </div>
-                                             <label for="" id="priceResume"></label>
+                                             <label for="" id="pricesummary"></label>
                                         </div>
                                         <br>
                                         <span></span>
           
-                                        <div class="flexResume">
+                                        <div class="flexsummary">
                                              <p>Online Service</p>
                                              <label for="" id="onlinePrice">+0$</label>
                                         </div>
-                                        <div class="flexResume">
+                                        <div class="flexsummary">
                                              <p>Larger Storage</p>
                                              <label for="" id="storagePrice">+0$</label>
                                         </div>
-                                        <div class="flexResume">
+                                        <div class="flexsummary">
                                              <p>Customizable Profile</p>
                                              <label for="" id="customizablePrice">+0$</label>
                                         </div>

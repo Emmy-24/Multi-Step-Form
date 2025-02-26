@@ -18,6 +18,8 @@ button {
      width: 1000px;
      height: 570px;
 }
+
+
 /* Sidebar */
 .sidebar {
      display: flex;
@@ -90,6 +92,7 @@ button {
 .steps span {
      color: white;
 }
+
 /* Step Container */
 .stepcontainer {
      background-color: rgba(210, 90, 14, 0);
@@ -97,8 +100,73 @@ button {
      height: 550px;
      margin: auto;
 }
+#stepInfo {
+     display: flex;
+     flex-direction: column;
+}
+#stepPlan {
+     display: none;
+     flex-direction: column;
+}
+#stepAddon {
+     display: none;
+     flex-direction: column;
+}
+#stepSummary {
+     display: none;
+     flex-direction: column;
+}
+#stepThankYou {
+     display: none;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 150px;
+}
+#stepThankYou img {
+     width: 80px;
+}
+#stepInfo input {
+     width: 100%;
+     height: 40px;
+     border-radius: 5px;
+     border: solid 1px rgba(103, 92, 92, 0.628);
+}
+.buttoncontainertepone {
+     position: relative;
+     background-color: rgba(0, 255, 51, 0);
+     padding-left: 380px;
+     padding-top: 73px;
+}
+.buttoncontainersteptwo {
+     display: flex;
+     justify-content: space-between;
+     background-color: rgba(0, 255, 51, 0);
+     padding-top: 75px;
+}
+.buttoncontainerstepthree {
+     display: flex;
+     justify-content: space-between;
+     background-color: rgba(0, 255, 51, 0);
+     padding-top: 80px;
+}
+.buttoncontainerstepfour {
+     display: flex;
+     justify-content: space-between;
+     background-color: rgba(0, 255, 51, 0);
+     padding-top: 39px;
+}
+.nextstep {
+     padding: 15px 20px 15px 20px;
+     width: 120px;
+     background-color: hsl(213, 96%, 18%);
+     color: white;
+     border-radius: 5px;
+     border: solid 1px rgba(0, 0, 255, 0);
+     cursor: pointer;
+     font-size: 16px;
+}
 .nextstep:hover {
-     background-color: hslo(243, 100%, 62%, 0.423);
+     background-color: hsla(243, 100%, 62%, 0.8);
 }
 .addonbutton {
      display: flex;
@@ -110,7 +178,7 @@ button {
      height: 80px;
      padding: 0px 30px 0px 30px;
 }
-.addonbutton:hover{
+.addonbuttonaddOnButton:hover {
      border: solid 1px hsl(229, 77%, 52%);
 }
 .addonbutton p {
@@ -126,65 +194,56 @@ button {
 .regroup {
      display: flex;
 }
-
-/* Step Info */
-#stepInfo {
+.planMonth {
+     display: flex;
+     justify-content: space-between;
+}
+.planbutton {
      display: flex;
      flex-direction: column;
-}
-#stepInfo input {
-     width: 100%;
-     height: 40px;
-     border-radius: 5px;
-     border: solid 1px rgba(103, 92, 92, 0.628);
-}
-#stepInfo .buttoncontainerstepone {
-     position: relative;
-     background-color: rgba(0, 255, 51, 0);
-     padding-left: 380px;
-     padding-top: 75px;
-}
-#stepInfo .nextstep {
-     padding: 15px 20px 15px 20px;
-     width: 120px;
-     background-color: hsl(213, 96%, 18%);
-     color: white;
-     border-radius: 5px;
-     border: solid 1px rgba(0, 0, 255, 0);
+     border-radius: 10px;
+     width: 30%;
+     height: 200px;
+     border: solid 1px hsl(229, 24%, 87%);
+     background-color: white;
      cursor: pointer;
-     font-size: 15px;
 }
-#stepInfo .nextstep:hover {
-     background-color: hslo(243, 100%, 62%, 0.423);
+.planbutton:hover {
+     border: solid 1px hsl(213, 96%, 18%);
+}
+.planbutton img {
+     margin-top: 14px;
+     margin-left: 8px;
+}
+.planbutton p {
+     font-size: 18px;
+     margin-top: 50px;
+     margin-left: 8px;
+     margin-bottom: 8px;
+}
+.planbutton span {
+     margin-left: 8px;
+     color: hsl(231, 11%, 63%);
 }
 .free {
-     margin-left: 8px;
      cursor: pointer;
+     margin-left: 8px;
      font-size: 12px;
+     margin-top: 10px;
 }
 #modeTotal {
      color: hsl(231, 11%, 63%);
 }
-
-/* Step Plan */
-#stepPlan {
-     display: none;
-     flex-direction: column;
-}
-#stepPlan .planMonth {
-     display: flex;
-     justify-content: space-between;
-}
-#stepPlan .switch {
+.switch {
      justify-content: center;
      display: flex;
      width: 100%;
-     height: 60px;
+     height: 56px;
      background-color: hsl(217, 100%, 97%);
      border-radius: 10px;
      margin-top: 25px;
 }
-#stepPlan .check {
+.check {
      display: inline-block;
      position: relative;
      width: 40px;
@@ -195,15 +254,42 @@ button {
      margin-left: 10px;
      margin-right: 10px;
 }
-#stepPlan .check input {
+.check input {
      position: absolute;
-     top: -3px;
-     left: -3px;
+     top: -30px;
+     left: -30px;
      width: 0;
      height: 0;
 }
-
-#stepPlan .check input + span {
+.slider {
+     position: absolute;
+     cursor: pointer;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: hsl(213, 96%, 18%);
+     transition: 0.4s;
+     border-radius: 20px;
+}
+.slider:before {
+     position: absolute;
+     content: "";
+     height: 16px;
+     width: 16px;
+     left: 2px;
+     bottom: 2px;
+     background-color: white;
+     transition: 0.4s;
+     border-radius: 50%;
+}
+input:checked+.slider {
+     background-color: hsl(213, 96%, 18%);
+}
+input:checked+.slider:before {
+     transform: translateX(20px);
+}
+.check input+span {
      position: absolute;
      top: 0;
      bottom: 0;
@@ -212,7 +298,10 @@ button {
      background: hsl(213, 96%, 18%);
      border-radius: 20px;
 }
-#stepPlan .check input + span:before {
+.check input:checked+span {
+     background: hsl(213, 96%, 18%);
+}
+.check input+span:before {
      content: "";
      display: inline-block;
      position: absolute;
@@ -225,119 +314,108 @@ button {
      transform: translateY(-50%);
      transition: all 0.5s;
 }
-#stepPlan .free {
-     margin-top: 10px;
-}
-#stepPlan #planYear {
-     display: none;
-     justify-content: space-between;
-}
-#stepPlan .planbutton{
-     display: flex;
-     flex-direction: column;
-     border-radius: 10px;
-     width: 30%;
-     height: 200px;
-     border: solid 1px hsl(229, 24%, 87%);
-     background-color: white;
-     cursor: pointer;
-}
-#stepPlan .planbutton:hover {
-     border: solid 1px hsl(213, 96%, 18%);
-}
-#stepPlan .planbutton img {
-     margin-top: 15px;
-     margin-left: 8px;
-}
-#stepPlan .planbutton p {
-     font-size: 18px;
-     margin-top: 50px;
-     margin-left: 8px;
-     margin-bottom: 8px;
-}
-#stepPlan .planbutton span {
-     margin-left: 8px;
-     color: hsl(231, 11%, 63%);
-}
-#stepPlan .buttoncontainersteptwo{
-     display: flex;
-     justify-content: space-between;
-     background-color: rgba(0, 255, 51, 0);
-     padding: 75px;
-}
-#stepPlan .nextstep {
-     padding: 15px 20px 15px 20px;
-     width: 120px;
-     background-color: hsl(213, 96%, 18%);
-     color: white;
-     border-radius: 5px;
-     border: solid 1px rgba(0, 0, 255, 0);
-     cursor: pointer;
-     font-size: 15px;
-}
-/* Step Addon */
-#stepAddon {
-     display: none;
-     flex-direction: column;
-}
-#stepAddon .addonbutton input:checked + span {
-     background: hsl(213, 96%, 18%);
-}
-#stepAddon .addonbutton input:checked+span::before {
+.check input:checked+span:before {
      left: 24px;
 }
-#stepAddon #addonYearly {
+#planYear {
+     display: none;
+     justify-content: space-between;
+}
+#addonYearly {
      display: none;
      flex-direction: column;
 }
-#stepAddon .buttoncontainerstepthree {
+#addonMonthly {
+     flex-direction: column;
+}
+#summaryYear {
+     display: none;
+     flex-direction: column;
+}
+#summaryMonth {
+     display: flex;
+     flex-direction: column;
+}
+.containersummary {
+     width: 80%;
+     height: 15x0px;
+     background-color: hsl(229deg 28% 96%);
+     padding: 1px 30px 10px 20px;
+     border-radius: 10px;
+}
+.containersummary button {
+     border: none;
+     background-color: rgba(250, 235, 215, 0);
+     text-decoration: underline;
+     cursor: pointer;
+     padding-left: 0px;
+}
+.containersummary button:hover {
+     color: hsl(243, 100%, 62%);
+}
+.containersummary h4 {
+     margin-bottom: 0px;
+}
+.containersummary span {
+     display: block;
+     margin-top: 0px;
+     height: 1px;
+     background-color: hsl(231deg 18% 88%);
+}
+.flexsummary {
      display: flex;
      justify-content: space-between;
-     background-color: rgba(0, 255, 51, 0);
-     padding: 80px;
 }
-#stepAddon .nextstep {
-     padding: 15px 20px 15px 20px;
-     width: 120px;
-     background-color: hsl(213, 96%, 18%);
-     color: white;
-     border-radius: 5px;
-     border: solid 1px rgba(0, 0, 255, 0);
-     cursor: pointer;
-     font-size: 15px;
-}
-
-/* Step Summary */
-#stepSummary {
-     display: none;
-     flex-direction: column;
-}
-#stepSummary .buttoncontainerstepfour {
+.flexsummary label {
      display: flex;
-     justify-content: space-between;
-     background-color: rgba(0, 255, 51, 0);
-     padding: 40px;
-}
-#stepSummary .nextstep {
-     padding: 15px 20px 15px 20px;
-     width: 120px;
-     background-color: hsl(213, 96%, 18%);
-     color: white;
-     border-radius: 5px;
-     border: solid 1px rgba(0, 0, 255, 0);
-     cursor: pointer;
-     font-size: 15px;
-}
-
-/* Step Thank You */
-#stepThankYou {
-     display: none;
-     flex-direction: column;
      align-items: center;
-     margin-top: 150px;
 }
-#stepThankYou img {
-     width: 80px;
+.flexTotal {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0px 0px 0px 0px;
+     margin: 15px 0px 0px 0px;
+     width: 80%;
+     padding: 1px 20px 10px 20px;
+     border-radius: 10px;
+}
+.flexTotal span {
+     font-size: 20px;
+     color: hsl(243, 100%, 62%);
+}
+.stepAddon input:checked {
+     color: blue;
+}
+.goBack {
+     border: none;
+     cursor: pointer;
+     background-color: rgba(255, 255, 255, 0);
+     font-size: 16px;
+     color: hsl(231, 11%, 63%);
+}
+.dollar {
+     margin-left: -239px;
+}
+#errorName {
+     color: red;
+     font-size: 12px;
+}
+#errorNumber {
+     color: red;
+     font-size: 12px;
+}
+#errorEmail {
+     color: red;
+     font-size: 12px;
+}
+.flexError {
+     display: flex;
+     text-align: center;
+     justify-content: space-between;
+}
+.flexError span {
+     padding-top: 19px;
 }
 
 
@@ -352,7 +430,7 @@ button {
           margin-right: auto;
           box-shadow: 20px 20px 20px rgba(47, 18, 18, 0.101);
           width: 375px;
-          height: 680px;
+          height: 6800px;
      }
      .sidebar {
           display: flex;
@@ -363,7 +441,7 @@ button {
           background-image: url(/images/bg-sidebar-mobile.svg);
           border-radius: 10px;
      }
-     .sstepcontainer {
+     .stepcontainer {
           background-color: rgb(255, 255, 255);
           width: 250px;
           height: 500px;
@@ -379,7 +457,7 @@ button {
           position: relative;
           background-color: rgba(0, 255, 51, 0);
           padding-left: 130px;
-          padding-top: 39px;
+          padding-top: 3px;
      }
      .buttoncontainersteptwo {
           display: flex;
@@ -391,13 +469,13 @@ button {
           display: flex;
           justify-content: space-between;
           background-color: rgba(0, 255, 51, 0);
-          padding-top: 58px;
+          padding-top: 35px;
      }
      .buttoncontainerstepfour {
           display: flex;
           justify-content: space-between;
           background-color: rgba(0, 255, 51, 0);
-          padding-bottom: 39px;
+          padding-bottom: 30px;
      }
      .steps {
           display: none;
@@ -484,7 +562,7 @@ button {
           margin-top: 0;
           margin-left: 37px;
      }
-     .descrition {
+     .description {
           margin-top: 0;
      }
      .planbutton {
@@ -511,9 +589,6 @@ button {
           font-size: 12px;
           margin-top: 23px;
           position: absolute;
-     }
-     .underMedia {
-          flex-direction: column;
      }
      .free {
           cursor: pointer;
@@ -549,27 +624,27 @@ button {
           font-weight: bold;
           font-size: 13px;
      }
-     .containerResume {
+     .containersummary {
           width: 80%;
           height: 15x0px;
           background-color: hsl(229deg 28% 96%);
           padding: 1px 20px 10px 20px;
           border-radius: 10px;
      }
-     .containerResume button {
+     .containersummary button {
           border: none;
           background-color: rgba(250, 235, 215, 0);
           text-decoration: underline;
           cursor: pointer;
           padding-left: 0px;
      }
-     .containerResume button:hover {
+     .containersummary button:hover {
           color: hsl(243, 100%, 62%);
      }
-     .containerResume h4 {
+     .containersummary h4 {
           margin-bottom: 0px;
      }
-     .containerResume span {
+     .containersummary span {
           display: block;
           margin-top: -7px;
           height: 1px;
@@ -590,10 +665,10 @@ button {
           color: hsl(243, 100%, 62%);
           margin-right: -4px;
      }
-     .flexResume p {
+     .flexsummary p {
           font-size: 12px;
      }
-     .flexResume label {
+     .flexsummary label {
           font-size: 14px;
      }
      #totalPrice {
